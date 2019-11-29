@@ -1,13 +1,11 @@
 "use strict";
 
 function task5() {
-  let inputmessage = prompt(`Enter you country`);
+  const inputMessage = prompt(`Enter you country`).toLowerCase();
   let cost;
 
   if (inputmessage !== null) {
-    inputmessage = inputmessage.toLowerCase();
-
-    switch (inputmessage) {
+    switch (inputMessage) {
       case "китай":
         cost = 100;
         break;
