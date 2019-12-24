@@ -9,14 +9,26 @@ const ingredients = [
     'Приправы',
   ];
 
+//   const ul = document.querySelector("ul");
 
+//   const liAdd = function(arr){
+//     arr.forEach(element => {
+//  ul.appendChild(document.createElement("li").innerHTML = element);
+//          const li = document.createElement();
+//         // ul.appendChild(li); 
+//         // li;
+//     })}
 
-  const liAdd = function(arr){
-    arr.forEach(element => {
-        const ul = document.querySelector("ul");
-        const li = document.createElement("li");
-        ul.appendChild(li); 
-        li.innerHTML = element;
-    })}
+// liAdd(ingredients);
 
-liAdd(ingredients);
+const ingredientsList = {
+  list: document.querySelector('#ingredients')
+};
+
+const listItem = ingredients.map(el => {
+  const item = document.createElement('li');
+  item.textContent = el;
+  return item;
+});
+
+ingredientsList.list.append(...listItem);

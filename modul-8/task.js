@@ -8,7 +8,6 @@ const onClickLi = function(e) {
 };
 
 const ul = document.querySelector(".gallery");
-
 const liAdd = function(arr) {
   const string = arr.reduce((acc, element) => {
     return (acc += `<li class="gallery__item"><a href="${element.original}" class="gallery__link"><img class="gallery__image" src="${element.preview}" data-source="${element.original}" alt="${element.description}"></a></li>`);
@@ -22,7 +21,8 @@ const btn = document.querySelector("button");
 
 const closeImage = function(e) {
   e.preventDefault();
-  if (e.target !== imgOrigin) lightbox.classList.remove("is-open");
+  if (e.target !== imgOrigin){ lightbox.classList.remove("is-open")
+  };
 };
 
 btn.addEventListener("click", closeImage);
