@@ -1,6 +1,6 @@
+export default
 
-
-
+function goFacebook(FB){
 FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
 });
@@ -8,4 +8,5 @@ FB.getLoginStatus(function(response) {
 
 function statusChangeCallback(response){
     console.log(response);
+}
 }

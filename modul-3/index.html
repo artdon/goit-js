@@ -7,29 +7,25 @@
     <title>Document</title>
     <!-- HTTPS required. HTTP will give a 403 forbidden response -->
 <script src="https://sdk.accountkit.com/en_US/sdk.js"></script>
+<script src="./facebook.js" type="module"> </script>
 </head>
 <body>
     
 
-<input value="+1" id="country_code" />
-<input placeholder="phone number" id="phone_number"/>
-<button onclick="smsLogin();">Login via SMS</button>
-<div>OR</div>
-<input placeholder="email" id="email"/>
-<button onclick="emailLogin();">Login via Email</button>
 
     
-<script>
+<script type="module">
+    import bootcamp from "./facebook.js";
     window.fbAsyncInit = function() {
       FB.init({
         appId      : '580319269237283',
         cookie     : true,
         xfbml      : true,
-        version    : '{api-version}'
+        version    : 'v5.0'
       });
         
       FB.AppEvents.logPageView();   
-        
+      bootcamp(FB);
     };
   
     (function(d, s, id){
@@ -48,6 +44,6 @@
     <!-- <script src="./task5.js" type="module"></script> -->
     <!-- <script src="./task6.js" type="module"></script> -->
     <!-- <script src="./task7.js" type="module"></script> -->
-    <script src="facebook.js" type="module"> </script>
+
 </body>
 </html>
