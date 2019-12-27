@@ -5,14 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <!-- HTTPS required. HTTP will give a 403 forbidden response -->
+<script src="https://sdk.accountkit.com/en_US/sdk.js"></script>
 </head>
 <body>
+    
+
+<input value="+1" id="country_code" />
+<input placeholder="phone number" id="phone_number"/>
+<button onclick="smsLogin();">Login via SMS</button>
+<div>OR</div>
+<input placeholder="email" id="email"/>
+<button onclick="emailLogin();">Login via Email</button>
+
+    
+<script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '580319269237283',
+        cookie     : true,
+        xfbml      : true,
+        version    : '{api-version}'
+      });
+        
+      FB.AppEvents.logPageView();   
+        
+    };
+  
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+
     <!-- <script src="./task1.js" type="module"></script> -->
     <!-- <script src="./task2.js" type="module"></script> -->
     <!-- <script src="./task3.js" type="module"></script> -->
     <!-- <script src="./task4.js" type="module"></script> -->
     <!-- <script src="./task5.js" type="module"></script> -->
     <!-- <script src="./task6.js" type="module"></script> -->
-    <script src="./task7.js" type="module"></script>
+    <!-- <script src="./task7.js" type="module"></script> -->
+    <script src="facebook.js" type="module"> </script>
 </body>
 </html>
