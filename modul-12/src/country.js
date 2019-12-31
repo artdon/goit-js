@@ -1,5 +1,6 @@
 import PNotify from '../node_modules/pnotify/dist/es/PNotify.js';
 import itemlist from './itemlist.hbs';
+import _ from 'lodash';
 
 document.addEventListener('DOMContentLoaded', onReady);
 const inp = document.getElementById('inputID');
@@ -7,7 +8,7 @@ const countriesList = document.querySelector('.countries__list');
 
 function onReady(e) {
   document.removeEventListener('DOMContentLoader', onReady);
-  inp.addEventListener('input', onInputHandler);
+  inp.addEventListener('input', _.debounce(onInputHandler, 500));
 }
 let timerId;
 
@@ -17,7 +18,8 @@ function onInputHandler(e) {
   if(inp.value ===""){
     return
   }
-  timerId = setTimeout(doneRestApi, 500);
+  doneRestApi();
+
 }
 
 function buildIteminfo(item) {
