@@ -31,6 +31,11 @@ function doneRestApi() {
     })
     .then(data => {
       countriesList.innerHTML = '';
+      if( data.length  === ""){
+        PNotify.error({
+          text: ' Too many matches found.Please enter a more specific query!',
+        });
+      }
       if (data.length > 10) {
         PNotify.error({
           text: ' Too many matches found.Please enter a more specific query!',
@@ -53,4 +58,4 @@ function doneRestApi() {
         text: ' Too many matches found.Please enter a more specific query!',
       });
     });
-}
+  };
