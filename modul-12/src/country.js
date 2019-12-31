@@ -14,7 +14,9 @@ let timerId;
 function onInputHandler(e) {
   e.preventDefault();
   clearTimeout(timerId);
-
+  if(inp.value ===""){
+    return
+  }
   timerId = setTimeout(doneRestApi, 500);
 }
 
