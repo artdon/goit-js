@@ -1,12 +1,9 @@
 import PNotify from '../node_modules/pnotify/dist/es/PNotify.js';
 import itemlist from './itemlist.hbs';
 
-
-
 document.addEventListener('DOMContentLoaded', onReady);
 const inp = document.getElementById('inputID');
-const countriesList = document.querySelector(".countries__list")
-
+const countriesList = document.querySelector('.countries__list');
 
 function onReady(e) {
   document.removeEventListener('DOMContentLoader', onReady);
@@ -22,15 +19,9 @@ function onInputHandler(e) {
   timerId = setTimeout(doneRestApi, 500);
 }
 
-
-
-
 function buildIteminfo(item) {
   return itemlist(item);
 }
-
-
-
 
 function doneRestApi() {
   const urlT = 'https://restcountries.eu/rest/v2/name/';
@@ -58,11 +49,8 @@ function doneRestApi() {
       }
     })
     .catch(text => {
-      console.log(text);
       PNotify.error({
         text: ' Too many matches found.Please enter a more specific query!',
       });
     });
 }
-
-
