@@ -9,25 +9,25 @@ const ref = {
   checkbox: document.querySelector('input[type="checkbox"]'),
 };
 
-const themeDefoult = localStorage.getItem('Theme');
+const eDefoult = localStorage.getItem('ref.checkbox');
 
-if (themeDefoult === 'DARK') {
-  ref.body.classList.add('dark-theme');
+if (eDefoult === Theme.DARK) {
+  ref.body.setAttribute("class", Theme.DARK);
   ref.checkbox.checked = true;
 } else {
-  ref.body.classList.add('light-theme');
+  ref.body.setAttribute("class", Theme.LIGHT);
   ref.checkbox.checked = false;
 }
 ref.input.addEventListener('click', changeTheme);
 
 function changeTheme(e) {
-  if (ref.body.classList.contains('light-theme')) {
-    ref.body.classList.remove('light-theme');
-    ref.body.classList.add('dark-theme');
-    localStorage.setItem('Theme', 'DARK');
+  if (ref.body.classList.contains(Theme.LIGHT)) {
+    ref.body.removeAttribute("class");
+    ref.body.setAttribute("class", Theme.DARK);
+    localStorage.setItem('ref.checkbox', Theme.DARK);
   } else {
-    ref.body.classList.remove('dark-theme');
-    ref.body.classList.add('light-theme');
-    localStorage.setItem('Theme', 'LIGHT');
+    ref.body.removeAttribute("class");
+    ref.body.setAttribute("class", Theme.LIGHT);
+    localStorage.setItem('ref.checkbox', Theme.LIGHT);
   }
 }
