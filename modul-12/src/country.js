@@ -8,7 +8,6 @@ const countriesList = document.querySelector('.countries__list');
 function onReady(e) {
   document.removeEventListener('DOMContentLoader', onReady);
   inp.addEventListener('input', onInputHandler);
-  onInputHandler;
 }
 let timerId;
 
